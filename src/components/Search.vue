@@ -1,8 +1,12 @@
 <template lang="pug">
   main
-    dm-notification(v-show="showNotification")
-      p(slot="body") No se encontraron resultados
-    dm-loader(v-show="isLoading")
+    transition(name="move")
+      dm-notification(v-show="showNotification")
+        p(slot="body") No se encontraron resultados
+
+    transition(name="move")
+      dm-loader(v-show="isLoading")
+
     section.section(v-show="!isLoading")
       nav.nav
         .container
