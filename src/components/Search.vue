@@ -10,16 +10,20 @@
     section.section(v-show="!isLoading")
       nav.nav
         .container
-          input.input.is-large(
-            type="text",
-            placeholder="Buscar canciones",
-            v-model="searchQuery",
-            @keyup.enter="search"
-          )
-          a.button.is-info.is-large(@click="search") Buscar
-          a.button.is-danger.is-large &times;
-          p
-            small {{ searchMessage }}
+          .field.has-addons
+            .control.is-expanded
+              input.input.is-large(
+                type="text",
+                placeholder="Buscar canciones",
+                v-model="searchQuery",
+                @keyup.enter="search"
+              )
+            .control
+              a.button.is-info.is-large(@click="search") Buscar
+              a.button.is-danger.is-large &times;
+      .container
+        p
+          small {{ searchMessage }}
 
       .container.results
         .columns.is-multiline
